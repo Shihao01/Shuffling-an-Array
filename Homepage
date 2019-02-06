@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>shuffling an Array</title>
+	
+</head>
+<body>
+	<div id="container">
+		<p> put 8 number from A to I </p>
+        <p>A</p>
+		<input type="number" id="A"  >
+        <p>B</p>
+		<input type="number" id="B" >
+        <p>C</p>
+		<input type="number" id="C" > 
+        <p>D</p>
+		<input type="number" id="D" >
+        <p>E</p>
+		<input type="number" id="E" >
+        <p>F</p>
+		<input type="number" id="F" >
+        <p>G</p>
+		<input type="number" id="G" >
+        <p>H</p>
+		<input type="number" id="H" >
+        <p>I</p>
+		<input type="number" id="I" >
+        
+       <button id="show">Show you Number!</button><br>
+		<button id="shuff">shuffed number</button>
+        <p id="Younumber"></p>
+        <p id="shuffednumber"></p>
+	</div>
+	<script >
+        "use strict"
+var showButton = document.querySelector("#show");
+showButton.addEventListener("click", showyounumber, false);
+var shuffButton = document.querySelector("#shuff");
+shuffButton.addEventListener("click", shuffyounumber, false);
+        
+var A = document.querySelector("#A");
+var B = document.querySelector("#B");
+var C = document.querySelector("#C");
+var D = document.querySelector("#D");
+var E = document.querySelector("#E");
+var F = document.querySelector("#F");
+var G = document.querySelector("#G");
+var H = document.querySelector("#H");
+var I = document.querySelector("#I");
+  
+function showyounumber() {
+        var a = parseInt(A.value);
+        var b = parseInt(B.value);
+        var c = parseInt(C.value);
+        var d = parseInt(D.value);
+        var e = parseInt(E.value);
+        var f = parseInt(F.value);
+        var g = parseInt(G.value);
+        var h = parseInt(H.value);
+        var i = parseInt(I.value);
+	var startnumber  = [a,b,c,d,e,f,g,h,i];
+    
+document.getElementById("Younumber").innerHTML = "You number is :" + startnumber
+    }
+
+function shuffyounumber() {
+    
+    var a = parseInt(A.value);
+        var b = parseInt(B.value);
+        var c = parseInt(C.value);
+        var d = parseInt(D.value);
+        var e = parseInt(E.value);
+        var f = parseInt(F.value);
+        var g = parseInt(G.value);
+        var h = parseInt(H.value);
+        var i = parseInt(I.value);
+	var startnumber  = [a,b,c,d,e,f,g,h,i]; 
+    
+    const shuffledDeck = [ ];
+while (startnumber.length > 0) {
+      let rnd = Math.floor( Math.random( ) * startnumber.length);
+      shuffledDeck.push( startnumber[ rnd ] );
+      startnumber.splice( rnd, 1 );         
+}
+
+
+    document.getElementById("shuffednumber").innerHTML = "You number is :" + shuffledDeck
+    }
+      
+
+   
+  
+
+    </script>
+</body>
+</html>
